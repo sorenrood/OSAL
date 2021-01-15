@@ -2,6 +2,7 @@
 # https://pypi.org/project/azure-ai-textanalytics/
 import os
 from azure.ai.textanalytics import TextAnalyticsClient
-# from azure.ai.textanalytics import TextAnalyticsClient
-# from azure.core.credentials import AzureKeyCredential
+from azure.core.credentials import AzureKeyCredential
 key = os.getenv('AZURE_API_KEY')
+endpoint = 'https://soren-sentiment.cognitiveservices.azure.com/'
+print(key)
