@@ -8,7 +8,7 @@ from azure.core.credentials import AzureKeyCredential
 
 # Get text from image
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-text = pytesseract.image_to_string(Image.open('pic.jpg'))
+text = pytesseract.image_to_string(Image.open('simple.jpg'))
 
 # Make dictionary checker and list to add true words to
 d = enchant.Dict("en_US")
