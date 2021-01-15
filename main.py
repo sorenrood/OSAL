@@ -3,6 +3,7 @@
 from PIL import Image
 import pytesseract
 import enchant
+import nltk
 
 # Get text from image
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -12,13 +13,14 @@ text = pytesseract.image_to_string(Image.open('pic.jpg'))
 d = enchant.Dict("en_US")
 words = []
 
-# Split all words, check words, append to list real
-for word in text.split(' '):
-    if d.check(word):
-        words.append(word)
-    else:
-        continue
+# Clean Data
+bad_chars = [';', ':', '!', "*", "|", "{", "}"]
+cleaned = ''.join((filter(lambda i: i not in bad_chars, text)))
+print(cleaned)
 
-# Print all real words
-for word in words:
-    print(word)
+# Tokenizing (convert into sentences)
+sentence_list = nltk.tokenize.sent_tokenize(cleaned)
+for sentence in sentence_list:
+    print('-----------------')
+    print(sentence)
+    print('-----------------')
