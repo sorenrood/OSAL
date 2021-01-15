@@ -12,7 +12,7 @@ text = pytesseract.image_to_string(Image.open('pic.jpg'))
 d = enchant.Dict("en_US")
 words = []
 
-# Split all words, check words, append to words if real word
+# Split all words, check words, append to list real
 for word in text.split(' '):
     if d.check(word):
         words.append(word)
