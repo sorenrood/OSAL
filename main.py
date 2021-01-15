@@ -19,5 +19,6 @@ for word in text.split(' '):
     else:
         continue
 
+# Print all real words
 for word in words:
     print(word)
