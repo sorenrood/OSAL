@@ -1,40 +1,16 @@
-from PIL import Image
-import pytesseract
-import enchant
-import nltk
 import os
-from azure.ai.textanalytics import TextAnalyticsClient
-from azure.core.credentials import AzureKeyCredential
+from client import Client
 
-# Get text from image
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-text = pytesseract.image_to_string(Image.open('simple.jpg'))
+# Define variables essential for the client to run
+azure_endpoint = 'https://soren-sentiment.cognitiveservices.azure.com/'
+azure_key = os.getenv('AZURE_API_KEY')
+tesseract_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+image_path = 'simple.jpg'
 
-# Make dictionary checker and list to add true words to
-d = enchant.Dict("en_US")
-words = []
+client = Client(azure_endpoint=azure_endpoint, azure_key=azure_key,
+                tesseract_path=tesseract_path, image_path=image_path)
 
-# Clean Data
-bad_chars = [';', ':', '!', "*", "|", "{", "}", "\n", "\t"]
-cleaned = ''.join((filter(lambda i: i not in bad_chars, text)))
-
-# Tokenizing (convert into sentences)
-sentence_list = nltk.tokenize.sent_tokenize(cleaned)
-
-# Create document to send to azure
-documents = []
-i = 1
-for sentence in sentence_list:
-    documents.append({"id": i, "language": "en", "text": sentence})
-    i += 1
-input('made it')
-# Create a client
-key = os.getenv('AZURE_API_KEY')
-endpoint = 'https://soren-sentiment.cognitiveservices.azure.com/'
-credential = AzureKeyCredential(key)
-client = TextAnalyticsClient(endpoint=endpoint, credential=credential)
-
-# Get sentiment
-resp = client.analyze_sentiment(documents=documents)
-print(resp)
-    
+client.image_to_string()
+client.clean_tesseract_resp()
+client.text_to_document()
+client.analyze_sentiment()
