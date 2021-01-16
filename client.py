@@ -14,12 +14,12 @@ class Client:
             endpoint=azure_endpoint, credential=AzureKeyCredential(azure_key))
         self.dictionary = enchant.Dict('en_US')
         self.documents = []
-        self.tesseract_path = tesseract_path
         self.image_path = image_path
         self.cum_sentiment = 0.0
         self.raw_text = ''
         self.clean_text = ''
         self.sentence_list = []
+        pytesseract.pytesseract.tesseract_cmd = tesseract_path
         
     def image_to_string(self):
         """Uses Tesseract to convert an image to a string."""

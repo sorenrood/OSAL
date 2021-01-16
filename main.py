@@ -27,7 +27,7 @@ i = 1
 for sentence in sentence_list:
     documents.append({"id": i, "language": "en", "text": sentence})
     i += 1
-
+input('made it')
 # Create a client
 key = os.getenv('AZURE_API_KEY')
 endpoint = 'https://soren-sentiment.cognitiveservices.azure.com/'
