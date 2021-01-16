@@ -1,2 +1,6 @@
 # Ocular Sentiment Analysis Engine (OSAE)
-### Image => Tesseract-OCR => Cleaning Response => Azure Text Sentiment Analysis
+1. Image
+2. Tesseract-OCR
+3. Clean Response
+4. Azure Text Sentiment Analysis
+5. Repeat
