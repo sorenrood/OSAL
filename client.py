@@ -39,4 +39,5 @@ class Client:
     
     def analyze_sentiment(self):
         resp = self.azure_client.analyze_sentiment(documents=self.documents)
+        print(resp)
         # Loop over sentiment scores and add to cumulative sentiment variable.

@@ -16,3 +16,5 @@ print(client.clean_text)
 client.text_to_document()
 print(client.documents)
 
+client.analyze_sentiment()
+
