@@ -1,4 +1,4 @@
-# Ocular Sentiment Analysis Engine (OSAE)
+# Ocular Sentiment Analysis Library (OSAL)
 1. Input Image (.jpg or .png)
 2. Tesseract-OCR
 3. Clean Response
