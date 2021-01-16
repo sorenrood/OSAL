@@ -11,4 +11,8 @@ client = Client(azure_endpoint=azure_endpoint, azure_key=azure_key,
 
 client.image_to_string()
 client.clean_tesseract_resp()
+print(client.clean_text)
+
+client.text_to_document()
+print(client.documents)
 

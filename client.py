@@ -33,7 +33,7 @@ class Client:
     def text_to_document(self):
         """Convert cleaned text to a 'document' before feeding to Azure."""
         i = 1
-        for sentence in nltk.tokenize.sent_tokenize(self.raw_text):
+        for sentence in nltk.tokenize.sent_tokenize(self.clean_text):
             self.documents.append({"id": i, "language": "en", "text": sentence})
             i += 1
     
