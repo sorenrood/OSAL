@@ -14,10 +14,10 @@ class Client:
             endpoint=azure_endpoint, credential=AzureKeyCredential(azure_key))
         self.dictionary = enchant.Dict('en_US')
         self.documents = []
-        self.image_path = image_path
+        self.image_path: str = image_path
         self.cum_sentiment = 0.0
-        self.raw_text = ''
-        self.clean_text = ''
+        self.raw_text: str = ''
+        self.clean_text: str = ''
         self.sentence_list = []
         pytesseract.pytesseract.tesseract_cmd = tesseract_path
         
