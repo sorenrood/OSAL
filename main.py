@@ -1,5 +1,7 @@
 import os
 from client import Client
+import pandas as pd
+import plotly.express as px
 
 # Define variables essential for the client to run
 azure_endpoint = 'https://soren-sentiment.cognitiveservices.azure.com/'
@@ -25,4 +27,13 @@ for x in resp:
     sentimap['negative'] += x['confidence_scores']['negative']
     sentimap['neutral'] += x['confidence_scores']['neutral']
 
-print(sentimap.items())
+data = {
+    'positive': [sentimap['positive']],
+    'negative': [sentimap['negative']],
+    'neutral': [sentimap['neutral']],
+}
+
+df = pd.DataFrame(data, columns=['positive', 'negative', 'neutral'])
+
+fig = px.bar(data, x='positive', y='negative', title='test_title')
+fig.show()
