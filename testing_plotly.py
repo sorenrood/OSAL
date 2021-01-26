@@ -17,5 +17,5 @@ df = pd.DataFrame(data, columns=['sentiscore', 'date'])
 
 print(df)
 
-fig = px.bar(data, x='date', y='sentiscore', title='Ocular Sentiment Analysis Library Chart')
+fig = px.line(data, x='date', y='sentiscore', title='Ocular Sentiment Analysis Library Chart')
 fig.show()
