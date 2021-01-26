@@ -5,7 +5,7 @@ import nltk
 import os
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
-
+from typing import List
 
 class Client:
     """Handles all data processing. The intention is to call analyze_sentiment each article."""
@@ -13,31 +13,26 @@ class Client:
         self.azure_client = TextAnalyticsClient(
             endpoint=azure_endpoint, credential=AzureKeyCredential(azure_key))
         self.dictionary = enchant.Dict('en_US')
-        self.documents = []
         self.image_path: str = image_path
-        self.cum_sentiment = 0.0
-        self.raw_text: str = ''
-        self.clean_text: str = ''
-        self.sentence_list = []
         pytesseract.pytesseract.tesseract_cmd = tesseract_path
         
-    def image_to_string(self):
+    def image_to_string(self) -> str:
         """Uses Tesseract to convert an image to a string."""
-        self.raw_text = pytesseract.image_to_string(Image.open(self.image_path))
+        return pytesseract.image_to_string(Image.open(self.image_path))
 
-    def clean_tesseract_resp(self):
-        """Clean the response from Tesseract."""
+    def clean_tesseract_resp(self, raw_text: str) -> str:
+        """Clean the response from Tesseract. Will return a str."""
         bad_chars = [';', ':', '!', "*", "|", "{", "}", "\n", "\t"]
-        self.clean_text = ''.join((filter(lambda i: i not in bad_chars, self.raw_text)))
+        return ''.join((filter(lambda i: i not in bad_chars, raw_text)))
 
-    def text_to_document(self):
-        """Convert cleaned text to a 'document' before feeding to Azure."""
+    def text_to_document(self, clean_text: str) -> List[str]:
+        """Convert cleaned text to a 'document' before feeding to Azure. Will return a List[str]."""
+        documents = []
         i = 1
-        for sentence in nltk.tokenize.sent_tokenize(self.clean_text):
-            self.documents.append({"id": i, "language": "en", "text": sentence})
+        for sentence in nltk.tokenize.sent_tokenize(clean_text):
+            documents.append({"id": i, "language": "en", "text": sentence})
             i += 1
+        return documents
     
-    def analyze_sentiment(self):
-        resp = self.azure_client.analyze_sentiment(documents=self.documents)
-        print(resp)
-        # Loop over sentiment scores and add to cumulative sentiment variable.
+    def analyze_sentiment(self, documents: List[str]) -> str:
+        return self.azure_client.analyze_sentiment(documents=documents)
