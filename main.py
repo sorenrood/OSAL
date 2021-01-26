@@ -33,7 +33,4 @@ data = {
     'neutral': [sentimap['neutral']],
 }
 
-df = pd.DataFrame(data, columns=['positive', 'negative', 'neutral'])
-
-fig = px.bar(data, x='positive', y='negative', title='test_title')
-fig.show()
+print(data.items())

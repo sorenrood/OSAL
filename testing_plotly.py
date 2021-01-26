@@ -1,13 +1,21 @@
 import pandas as pd
 import plotly.express as px
 
+# data = {
+#     'positive': [1],
+#     'negative': [4],
+#     'neutral': [7],
+#     'date': ['jan-1']
+# }
+
 data = {
-    'positive': [1, 2, 3],
-    'negative': [4, 5, 6],
-    'neutral': [7, 8, 9],
+    'sentiscore': [4],
+    'date': ['jan-1']
 }
 
-df = pd.DataFrame(data, columns=['positive', 'negative', 'neutral'])
+df = pd.DataFrame(data, columns=['sentiscore', 'date'])
 
-fig = px.bar(data, x='soren', y='negative', title='Ocular Sentiment Analysis Library Chart')
+print(df)
+
+fig = px.bar(data, x='date', y='sentiscore', title='Ocular Sentiment Analysis Library Chart')
 fig.show()
