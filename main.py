@@ -21,9 +21,13 @@ client = Client(azure_endpoint=azure_endpoint, azure_key=azure_key,
                 tesseract_path=tesseract_path, image_path=image_path)
 
 # Turn image into string, chunk into groups of 10.
+print(f"Turning {image_path} into text.")
 raw = client.image_to_string()
+print("Cleaning.")
 clean = client.clean_tesseract_resp(raw)
+print("Splitting cleaned text.")
 documents = client.text_to_document(clean)
+print("Chunking sentences into groups of 10.")
 chunked_list = divide_chunks(documents, 10)
 
 # Define map to store sentiment scores.
