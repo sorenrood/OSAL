@@ -19,28 +19,33 @@ image_path = 'data/The_Los_Angeles_Times_Fri__Dec_12__1941_.jpg'
 client = Client(azure_endpoint=azure_endpoint, azure_key=azure_key,
                 tesseract_path=tesseract_path, image_path=image_path)
 
+# Turn image into string, chunk into groups of 10.
 raw = client.image_to_string()
 clean = client.clean_tesseract_resp(raw)
 documents = client.text_to_document(clean)
 chunked_list = divide_chunks(documents, 10)
-print(chunked_list[0])
-input()
-resp = client.analyze_sentiment(chunked_list[0])
 
+# Define map to store sentiment scores.
 sentimap = {}
 sentimap['positive'] = 0
 sentimap['negative'] = 0
 sentimap['neutral'] = 0
+num_sentences = int(chunked_list[-1][0]['id'])
 
-for x in resp:
-    sentimap['positive'] += x['confidence_scores']['positive']
-    sentimap['negative'] += x['confidence_scores']['negative']
-    sentimap['neutral'] += x['confidence_scores']['neutral']
+# Iterate over each chunk of 10 and get an azure score. Save scores to sentimap.
+for group in chunked_list:
+    resp = client.analyze_sentiment(group)
+    print(resp)
+    
+    for x in resp:
+        sentimap['positive'] += x['confidence_scores']['positive']
+        sentimap['negative'] += x['confidence_scores']['negative']
+        sentimap['neutral'] += x['confidence_scores']['neutral']
 
-data = {
-    'positive': [sentimap['positive']],
-    'negative': [sentimap['negative']],
-    'neutral': [sentimap['neutral']],
-}
+    print('\n')
+    print(sentimap.items())
+    # input('press enter to continue to next grouping of 10.')
 
-print(data.items())
+print(f"Positive score: {sentimap['positive'] / num_sentences}")
+print(f"Neutral score: {sentimap['neutral'] / num_sentences}")
+print(f"Negative score: {sentimap['negative'] / num_sentences}")
