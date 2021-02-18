@@ -2,6 +2,7 @@ import os
 from client import Client
 import pandas as pd
 import plotly.express as px
+import sys
 
 def divide_chunks(l, n):
     '''Divides the input list into groups of n, then returns.'''
@@ -14,7 +15,7 @@ def divide_chunks(l, n):
 azure_endpoint = 'https://soren-sentiment.cognitiveservices.azure.com/'
 azure_key = os.getenv('AZURE_API_KEY')
 tesseract_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-image_path = 'data/The_Los_Angeles_Times_Tue__Dec_30__1941_.jpg'
+image_path = 'data/' + sys.argv[1]
 
 client = Client(azure_endpoint=azure_endpoint, azure_key=azure_key,
                 tesseract_path=tesseract_path, image_path=image_path)
