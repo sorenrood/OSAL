@@ -14,7 +14,7 @@ def divide_chunks(l, n):
 azure_endpoint = 'https://soren-sentiment.cognitiveservices.azure.com/'
 azure_key = os.getenv('AZURE_API_KEY')
 tesseract_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-image_path = 'data/The_Los_Angeles_Times_Fri__Dec_12__1941_.jpg'
+image_path = 'data/The_Los_Angeles_Times_Thu__May_21__1942_.jpg'
 
 client = Client(azure_endpoint=azure_endpoint, azure_key=azure_key,
                 tesseract_path=tesseract_path, image_path=image_path)
@@ -34,18 +34,15 @@ num_sentences = int(chunked_list[-1][0]['id'])
 
 # Iterate over each chunk of 10 and get an azure score. Save scores to sentimap.
 for group in chunked_list:
+    print('analyzing')
     resp = client.analyze_sentiment(group)
-    print(resp)
-    
     for x in resp:
         sentimap['positive'] += x['confidence_scores']['positive']
         sentimap['negative'] += x['confidence_scores']['negative']
         sentimap['neutral'] += x['confidence_scores']['neutral']
 
-    print('\n')
-    print(sentimap.items())
-    # input('press enter to continue to next grouping of 10.')
-
+# Print metrics.
+print(f"Number of sentences: {num_sentences}")
 print(f"Positive score: {sentimap['positive'] / num_sentences}")
-print(f"Neutral score: {sentimap['neutral'] / num_sentences}")
 print(f"Negative score: {sentimap['negative'] / num_sentences}")
+print(f"Neutral score: {sentimap['neutral'] / num_sentences}")
