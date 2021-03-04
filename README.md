@@ -1,6 +1,6 @@
 # Ocular Sentiment Analysis Library (OSAL)
 
-### GSheets Data Analysis
+### Analysis (pretty graphs)
 https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing
 
 ### Requirements
