@@ -1,5 +1,8 @@
 # Ocular Sentiment Analysis Library (OSAL)
 
+### Description
+TODO
+
 ### Data and Analysis
 * [Data Spreadsheet](https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing)
 
