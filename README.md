@@ -2,6 +2,7 @@
 
 ### Data and Analysis
 [Data/Graphs](https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing)
+
 Article Explaining Findings (not written yet)
 
 ### Setup
