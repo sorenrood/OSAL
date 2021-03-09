@@ -6,7 +6,7 @@ https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiur
 ### Setup
 1. [Install tesseract via pre-built binary package](https://tesseract-ocr.github.io/tessdoc/Home.html)
 2. Set up azure cognitive services resource and enable text analytics API.
-3. Configure variables for your machine on lines 13-17 in `main.py`
+3. Configure variables for your machine on lines 14-17 in `main.py`
 
 ### General Flow
 1. Input Image (run program by calling `python main.py data/path_to_input_image.jpg`)
