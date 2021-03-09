@@ -1,7 +1,8 @@
 # Ocular Sentiment Analysis Library (OSAL)
 
 ### Data and Analysis
-https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing
+[Data/Graphs](https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing)
+Article Explaining Findings (not written yet)
 
 ### Setup
 1. [Install tesseract via pre-built binary package](https://tesseract-ocr.github.io/tessdoc/Home.html)
