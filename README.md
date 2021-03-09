@@ -13,7 +13,7 @@ TODO
 * Set up azure cognitive services resource and enable text analytics API.
 * Configure variables for your machine on lines 14-17 in `main.py`
 
-### General Flow
+### General Program Flow
 1. Input Image (run program by calling `python main.py data/path_to_input_image.jpg`)
 2. Tesseract-OCR Convert Image to Text (10-15 seconds on my machine)
 3. Clean Response (< 1 second)
