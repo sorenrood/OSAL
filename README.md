@@ -1,10 +1,7 @@
 # Ocular Sentiment Analysis Library (OSAL)
 
-### Analysis (pretty graphs)
+### Data and Analysis
 https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing
-
-### Requirements
-todo - links/explanations
 
 ### General Flow
 1. Input Image (.jpg or .png)
