@@ -1,7 +1,7 @@
 # Ocular Sentiment Analysis Library (OSAL)
 
 ### Data and Analysis
-[Data/Graphs](https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing)
+[Data Spreadsheet](https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing)
 
 Article Explaining Findings (not written yet)
 
