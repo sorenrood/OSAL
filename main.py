@@ -12,7 +12,7 @@ def divide_chunks(l, n):
     return new_list
 
 # Define variables essential for the client to run
-azure_endpoint = 'https://soren-sentiment.cognitiveservices.azure.com/'
+azure_endpoint = 'https://soren-spu-sentiment.cognitiveservices.azure.com/'
 azure_key = os.getenv('AZURE_API_KEY')
 tesseract_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 image_path = 'data/' + sys.argv[1]
