@@ -20,5 +20,5 @@ TODO
 4. Azure Text Sentiment Analysis (< 3 seconds)
 5. Repeat
 
-### Labeled Data
+### Labeled Graph
 ![data](https://cdn.discordapp.com/attachments/819467035578859541/819685526650486804/events-graph.jpg)
