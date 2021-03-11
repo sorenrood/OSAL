@@ -1,8 +1,5 @@
 # Ocular Sentiment Analysis Library (OSAL)
 
-### Labeled Data
-![data](https://cdn.discordapp.com/attachments/819467035578859541/819685526650486804/events-graph.jpg)
-
 ### Description
 TODO
 
@@ -22,3 +19,6 @@ TODO
 3. Clean Response (< 1 second)
 4. Azure Text Sentiment Analysis (< 3 seconds)
 5. Repeat
+
+### Labeled Data
+![data](https://cdn.discordapp.com/attachments/819467035578859541/819685526650486804/events-graph.jpg)
