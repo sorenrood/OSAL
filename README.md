@@ -1,5 +1,8 @@
 # Ocular Sentiment Analysis Library (OSAL)
 
+### Labeled Data
+![data](https://cdn.discordapp.com/attachments/819467035578859541/819685526650486804/events-graph.jpg)
+
 ### Description
 TODO
 
