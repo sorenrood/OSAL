@@ -6,7 +6,7 @@ TODO (make sure to explain article, data, school project, library usage, etc.)
 ### Data and Analysis
 * [Data Spreadsheet](https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing)
 
-* Article Explaining Findings (not written yet)
+* [Article Explaining Findings](https://roodsoren.medium.com/quantifying-sentiment-in-wwii-newspapers-a836bc577e05)
 
 ### Setup
 * [Install tesseract via pre-built binary package](https://tesseract-ocr.github.io/tessdoc/Home.html)
