@@ -1,7 +1,7 @@
 # Ocular Sentiment Analysis Library (OSAL)
 
 ### Description
-TODO (make sure to explain article, data, school project, library usage, etc.)
+Computes the general sentiment of any text - just feed it an image.
 
 ### Data and Analysis
 * [Data Spreadsheet](https://docs.google.com/spreadsheets/d/1l6W0ZAt07hTXK2RLXPNIIMlB-2qxUbGGUxFAmiurOZo/edit?usp=sharing)
